@@ -13,9 +13,9 @@
 // Local database name.
 $db_name = '';
 
-$db_user = getenv('MYSQL_USER');
-$db_pass = getenv('MYSQL_PASS');
-$db_host = getenv('MYSQL_HOST');
+$db_user = $_ENV['MYSQL_USER'];
+$db_pass = $_ENV['MYSQL_PASS'];
+$db_host = $_ENV['MYSQL_HOST'];
 
 $databases = array(
  'default' => array(

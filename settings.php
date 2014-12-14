@@ -4,7 +4,7 @@
  * Core configuration file.
  *
  * Local developments settings should be configured in a settings.local.php
- * 
+ *
  * For documentation of possible settings and their meanings, see
  * default.settings.php or
  * https://api.drupal.org/api/drupal/sites%21default%21default.settings.php/7
@@ -68,4 +68,3 @@ $local_settings = dirname(__FILE__) . '/settings.local.php';
 if (file_exists($local_settings)) {
   include $local_settings;
 }
-
