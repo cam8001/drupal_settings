@@ -3,7 +3,7 @@ Drupal Settings
 
 Initial settings.php and settings.local.php for a local Drupal 7 installation intended for deployment on Acquia Cloud.
 
-Clone this repo into your sites/default or sites/<sitename>. 
+Clone this repo into your sites/default or sites/`<sitename>`. 
 
 * settings.php is the standard Drupal 7 settings file, stripped of comments.
   * fast_404 is enabled.
