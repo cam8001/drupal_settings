@@ -13,3 +13,5 @@ Clone this repo into your sites/default or sites/`<sitename>`.
     * You can specify your MySQL credentials with environment variables (documented in settings.local.php), or you can specify
       them manually at the top of the file.
     * You'll need to provide a database name.
+
+settings.local.php is added to `.gitignore` so that you don't check it into your upstream repo.
