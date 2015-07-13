@@ -34,9 +34,3 @@ if (class_exists('Memcache')) {
   $memcache = new Memcache;
   $isMemcacheAvailable = @$memcache->connect('localhost');
 }
-
-if ($isMemcacheAvailable && file_exists('./sites/all/modules/contrib/memcache/memcache.inc')) {
-  $conf['cache_backends'][] = './sites/all/modules/contrib/memcache/memcache.inc';
-  $conf['cache_default_class'] = 'MemCacheDrupal';
-  $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
-}

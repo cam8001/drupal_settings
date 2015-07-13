@@ -20,10 +20,6 @@ $ac_settings_path = "/var/www/site-php/{$ac_docroot}/{$ac_docroot}-settings.inc"
 if (file_exists($ac_settings_path)) {
   // Include database credentials.
   require $ac_settings_path;
-  // Enable memcache.
-  $conf['cache_backends'][] = './sites/all/modules/contrib/memcache/memcache.inc';
-  $conf['cache_default_class'] = 'MemCacheDrupal';
-  $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
 
   // Set base URL per environment as-per Insight recommendation.
   switch ($_ENV['AH_SITE_ENVIRONMENT']) {
@@ -38,28 +34,11 @@ if (file_exists($ac_settings_path)) {
   }
 }
 
-$update_free_access = FALSE;
+$settings['update_free_access'] = FALSE;
 
-ini_set('arg_separator.output', '&amp;');
-ini_set('magic_quotes_runtime', 0);
-ini_set('magic_quotes_sybase', 0);
-ini_set('session.cache_expire', 200000);
-ini_set('session.cache_limiter', 'none');
-ini_set('session.cookie_lifetime', 2000000);
-ini_set('session.gc_divisor', 100);
-ini_set('session.gc_maxlifetime', 200000);
-ini_set('session.gc_probability', 1);
-ini_set('session.save_handler', 'user');
-ini_set('session.use_cookies', 1);
-ini_set('session.use_only_cookies', 1);
-ini_set('session.use_trans_sid', 0);
-ini_set('url_rewriter.tags', '');
-
-// Enable Fast404 to save server resources for broken image paths.
-$conf['404_fast_paths_exclude'] = '/\/(?:styles)\//';
-$conf['404_fast_paths'] = '/\.(?:txt|png|gif|jpe?g|css|js|ico|swf|flv|cgi|bat|pl|dll|exe|asp)$/i';
-$conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>404 Not Found</title></head><body><h1>Not Found</h1><p>The requested URL "@path" was not found on this server.</p></body></html>';
-drupal_fast_404();
+$config_directories = array();
+$settings['hash_salt'] = '';
+$settings['container_yamls'][] = __DIR__ . '/services.yml';
 
 /**
  * Include a local settings file if it exists.
