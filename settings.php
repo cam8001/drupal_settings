@@ -35,9 +35,6 @@ if (file_exists($ac_settings_path)) {
 }
 
 $settings['update_free_access'] = FALSE;
-
-$config_directories = array();
-$settings['hash_salt'] = '';
 $settings['container_yamls'][] = __DIR__ . '/services.yml';
 
 /**
