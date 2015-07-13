@@ -11,7 +11,7 @@
  */
 
 // Local database name.
-$db_name = '';
+$db_name = 'LOCALDBNAME';
 
 $db_user = $_ENV['MYSQL_USER'];
 $db_pass = $_ENV['MYSQL_PASS'];
