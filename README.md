@@ -15,3 +15,8 @@ Clone this repo into your sites/default or sites/`<sitename>`.
     * You'll need to provide a database name.
 
 settings.local.php is added to `.gitignore` so that you don't check it into your upstream repo.
+
+You can export this to your local machine with the following:
+
+### Drupal 7 download
+`svn export https://github.com/cam8001/drupal_settings/branches/7.x/ --force .`
