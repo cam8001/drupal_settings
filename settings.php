@@ -36,6 +36,13 @@ if (file_exists($ac_settings_path)) {
     default:
       $base_url = NULL;
   }
+
+  // Protect non-prod environments from prying eyes.
+  if (file_exists(__DIR__ . '/acquia.inc')) {
+  if (isset($_ENV['AH_NON_PRODUCTION']) && $_ENV['AH_NON_PRODUCTION']) {
+    require __DIR__ . '/acquia.inc';
+    ac_protect_this_site();
+  }
 }
 
 $update_free_access = FALSE;
