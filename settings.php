@@ -21,9 +21,12 @@ if (file_exists($ac_settings_path)) {
   // Include database credentials.
   require $ac_settings_path;
   // Enable memcache.
-  $conf['cache_backends'][] = './sites/all/modules/contrib/memcache/memcache.inc';
-  $conf['cache_default_class'] = 'MemCacheDrupal';
-  $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
+  $memcache_path = './sites/all/modules/contrib/memcache/memcache.inc';
+  if (file_exists($memcache_path)) {
+    $conf['cache_backends'][] = $memcache_path;
+    $conf['cache_default_class'] = 'MemCacheDrupal';
+    $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
+  }
 
   // Set base URL per environment as-per Insight recommendation.
   switch ($_ENV['AH_SITE_ENVIRONMENT']) {
