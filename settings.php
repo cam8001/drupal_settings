@@ -11,7 +11,7 @@
  */
 
 // Acquia Cloud docroot name.
-$ac_docroot = '';
+$ac_docroot = 'ACDOCROOT_NAME';
 $ac_settings_path = "/var/www/site-php/{$ac_docroot}/{$ac_docroot}-settings.inc";
 
 /**
@@ -75,3 +75,5 @@ $local_settings = dirname(__FILE__) . '/settings.local.php';
 if (file_exists($local_settings)) {
   include $local_settings;
 }
+
+
