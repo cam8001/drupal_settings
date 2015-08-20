@@ -44,6 +44,7 @@ if (file_exists($ac_settings_path)) {
       ac_protect_this_site();
     }
   }
+}
 
 $update_free_access = FALSE;
 
