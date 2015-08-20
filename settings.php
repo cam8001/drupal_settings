@@ -42,6 +42,10 @@ if (file_exists($ac_settings_path)) {
 
   // Protect non-prod environments from prying eyes.
   if (file_exists(__DIR__ . '/acquia.inc')) {
+    // Authorisation settings for non-prod environments.
+    // @see https://gist.github.com/typhonius/7524395
+    #AUTHSETTINGS
+
     if (isset($_ENV['AH_NON_PRODUCTION']) && $_ENV['AH_NON_PRODUCTION']) {
       require __DIR__ . '/acquia.inc';
       ac_protect_this_site();
