@@ -21,7 +21,7 @@ upstream repo.
 You can check this out to your local machine like this:
 
 # Drupal 8
-`svn export http://github.com/cam8001/drupal_settings/trunk/ --force .`
+`svn export https://github.com/cam8001/drupal_settings/trunk/ --force .`
 
 # Drupal 7
 `svn export https://github.com/cam8001/drupal_settings/branches/7.x/ --force . `
