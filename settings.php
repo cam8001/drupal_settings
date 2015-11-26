@@ -7,7 +7,7 @@
  *
  * For documentation of possible settings and their meanings, see
  * default.settings.php or
- * https://api.drupal.org/api/drupal/sites%21default%21default.settings.php/7
+ * https://api.drupal.org/api/drupal/sites%21default%21default.settings.php/8
  */
 
 // Acquia Cloud docroot name.
