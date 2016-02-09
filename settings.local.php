@@ -1,6 +1,6 @@
 <?php
 /**
- * Settings for a local Drupal installation.
+ * Settings for a local Drupal 8 installation.
  *
  * You can use local environment variables to specify MySQL parameters:
  *   - MYSQL_USER: local MySQL user.
