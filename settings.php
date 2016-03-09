@@ -16,7 +16,7 @@ $ac_docroot = 'ACDOCROOT';
 $site = NULL;
 
 $site = isset($site) ? $site : $ac_docroot;
-$ac_settings_path = "/var/www/site-php/{$ac_docroot}/{$ac_docroot}-settings.inc";
+$ac_settings_path = "/var/www/site-php/{$ac_docroot}/{$site}-settings.inc";
 
 /**
  * Include Acquia Cloud configuration.
