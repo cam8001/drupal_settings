@@ -12,6 +12,10 @@
 
 // Acquia Cloud docroot name.
 $ac_docroot = 'ACDOCROOT';
+// If this is a multisite, specify the site DB name here.
+$site = NULL;
+
+$site = isset($site) ? $site : $ac_docroot;
 $ac_settings_path = "/var/www/site-php/{$ac_docroot}/{$ac_docroot}-settings.inc";
 
 /**
