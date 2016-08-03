@@ -1,6 +1,8 @@
 <?php
 /**
  * Settings for a local Drupal 8 installation.
+ * 
+ * @see example.settings.local.php
  *
  * You can use local environment variables to specify MySQL parameters:
  *   - MYSQL_USER: local MySQL user.
@@ -29,8 +31,27 @@ $databases = array(
  ),
 );
 
-$isMemcacheAvailable = FALSE;
-if (class_exists('Memcache')) {
-  $memcache = new Memcache;
-  $isMemcacheAvailable = @$memcache->connect('localhost');
+
+if (!array_key_exists('hash_salt', $settings) || is_null($settings['hash_salt'])) {
+   $settings['hash_salt'] = 'local_hash_salt_change_for_production';
 }
+
+if (!array_key_exists('sync', $config_directories) || is_null($config_directories['sync'])) {
+  $config_directories['sync'] = __DIR__ . '/sync';
+}
+
+assert_options(ASSERT_ACTIVE, TRUE);
+\Drupal\Component\Assertion\Handle::register();
+
+$settings['container_yamls'][] = DRUPAL_ROOT . '/sites/development.services.yml';
+
+$config['system.logging']['error_level'] = 'verbose';
+
+$config['system.performance']['css']['preprocess'] = FALSE;
+$config['system.performance']['js']['preprocess'] = FALSE;
+
+$settings['extension_discovery_scan_tests'] = TRUE;
+
+$settings['rebuild_access'] = TRUE;
+
+$settings['skip_permissions_hardening'] = TRUE;
