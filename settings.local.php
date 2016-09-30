@@ -36,12 +36,13 @@ if (!array_key_exists('hash_salt', $settings) || is_null($settings['hash_salt'])
    $settings['hash_salt'] = 'local_hash_salt_change_for_production';
 }
 
+if (!isset($config_directories)) {
+ $config_directories = array();
+}
+
 if (!array_key_exists('sync', $config_directories) || is_null($config_directories['sync'])) {
   $config_directories['sync'] = __DIR__ . '/sync';
 }
-
-assert_options(ASSERT_ACTIVE, TRUE);
-\Drupal\Component\Assertion\Handle::register();
 
 $settings['container_yamls'][] = DRUPAL_ROOT . '/sites/development.services.yml';
 
