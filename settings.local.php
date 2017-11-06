@@ -32,7 +32,7 @@ $databases = array(
 );
 
 
-if (!array_key_exists('hash_salt', $settings) || is_null($settings['hash_salt'])) {
+if (!array_key_exists('hash_salt', $settings) || empty($settings['hash_salt'])) {
    $settings['hash_salt'] = 'local_hash_salt_change_for_production';
 }
 
